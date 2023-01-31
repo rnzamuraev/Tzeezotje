@@ -1,0 +1,20 @@
+{
+  "name": "tzeezotje",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cross-env NODE_ENV=development webpack-dev-server",
+    "build-dev": "cross-env NODE_ENV=development webpack",
+    "build-prod": "cross-env NODE_ENV=production webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Ruslan Zamuraev <rnzamuraev@gmail.com>",
+  "license": "ISC",
+  "private": "true",
+  "browserslist": "> 0.25%, not dead"
+}
