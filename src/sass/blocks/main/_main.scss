@@ -1,0 +1,28 @@
+.main {
+  padding-top: 55px;
+  background: url("../img/main/Zeezotje.png") no-repeat 50% /
+    cover;
+  height: 901px;
+}
+@media (max-width: 768px) {
+  .main {
+    padding-top: 20px;
+
+    height: 700px;
+  }
+}
+@media (max-width: 640px) {
+  .main {
+    height: 600px;
+  }
+}
+@media (max-width: 480px) {
+  .main {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@import "./_header";
+@import "./_hamburger";
+@import "./_promo";

@@ -1,0 +1,134 @@
+.reviews-slider {
+  padding: 219px 0 220px 0;
+  background: $blue;
+  .swiper {
+    position: relative;
+    padding-bottom: 50px;
+  }
+  &__content {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 785px;
+  }
+  &__quotes {
+    width: 83px;
+    height: 100%;
+    img {
+      width: 100%;
+    }
+  }
+  &__title {
+    margin-top: 34px;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 40px;
+    text-align: center;
+  }
+  &__text {
+    margin-top: 20px;
+    line-height: 40px;
+    text-align: center;
+  }
+  &__subtitle {
+    margin-top: 40px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 40px;
+    letter-spacing: 0.245em;
+    text-align: center;
+  }
+
+  &__buttons {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 10;
+  }
+  &__prev,
+  &__next {
+    transition: fill 0.3s linear;
+    cursor: pointer;
+  }
+  &__prev:hover svg path,
+  &__next:hover svg path {
+    stroke: $brown;
+  }
+  &__pagination {
+    display: none;
+    margin: 0 auto;
+  }
+  &__pagination .swiper-pagination-bullet {
+    width: 15px;
+    height: 15px;
+    background-color: $brown;
+  }
+}
+@media (max-width: 992px) {
+  .reviews-slider {
+    &__content {
+      width: 620px;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .reviews-slider {
+    &__content {
+      width: 480px;
+    }
+    &__title {
+      font-size: 30px;
+      line-height: 36px;
+    }
+    &__subtitle {
+      margin-top: 30px;
+    }
+    &__pagination {
+      display: flex;
+      justify-content: center;
+    }
+    &__buttons {
+      display: none;
+    }
+  }
+}
+@media (max-width: 640px) {
+  .reviews-slider {
+    &__content {
+      width: 480px;
+    }
+    &__title {
+      font-size: 30px;
+      line-height: 36px;
+    }
+  }
+}
+@media (max-width: 480px) {
+  .reviews-slider {
+    padding-left: 10px;
+    padding-right: 10px;
+    &__content {
+      width: 100%;
+    }
+    &__quotes {
+      width: 70px;
+    }
+    &__title {
+      font-size: 24px;
+      line-height: 30px;
+    }
+    &__text {
+      line-height: 30px;
+    }
+    &__subtitle {
+      margin-top: 25px;
+      font-size: 18px;
+      line-height: 30px;
+    }
+  }
+}

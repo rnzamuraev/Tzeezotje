@@ -1,0 +1,10 @@
+.text {
+  font-size: 18px;
+  line-height: 32px;
+  &__black {
+    color: $black;
+  }
+  &__brown {
+    color: $brown;
+  }
+}

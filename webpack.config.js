@@ -54,7 +54,14 @@ module.exports = {
     hot: isDev,
   },
   resolve: {
-    extensions: [".js", ".html", ".css", ".scss", ".sass"],
+    extensions: [
+      ".js",
+      ".html",
+      ".css",
+      ".scss",
+      ".sass",
+      ".php",
+    ],
     alias: {
       "@": path.resolve(__dirname, "src"),
       "@core": path.resolve(__dirname, "src/core"),
@@ -80,7 +87,15 @@ module.exports = {
         {
           from: path.resolve(
             __dirname,
-            "src/img/favicon.ico"
+            "src/PHPMailer/"
+            // "src/img/favicon.ico"
+          ),
+          to: path.resolve(__dirname, "dist/PHPMailer"),
+        },
+        {
+          from: path.resolve(
+            __dirname,
+            "src/send_mail.php"
           ),
           to: path.resolve(__dirname, "dist"),
         },
@@ -112,6 +127,39 @@ module.exports = {
 
         // },
         use: jsLoaders(),
+      },
+      //  Картинки
+      {
+        test: /\.(jpe?g|png|webp|gif|svg)$/i,
+        use: isDev
+          ? []
+          : [
+              {
+                loader: "image-webpack-loader",
+                options: {
+                  mozjpeg: {
+                    progressive: true,
+                  },
+                  optipng: {
+                    enabled: false,
+                  },
+                  pngquant: {
+                    quality: [0.65, 0.9],
+                    speed: 4,
+                  },
+                  gifsicle: {
+                    interlaced: false,
+                  },
+                  webp: {
+                    quality: 75,
+                  },
+                },
+              },
+            ],
+        type: "asset/resource",
+        generator: {
+          filename: "img/[name][ext]",
+        },
       },
     ],
   },
